@@ -32,7 +32,7 @@ Welcome to the Anime Recommendation System! This project is designed to provide 
 - **POST /auth/login** – Login and retrieve a JWT token.
 - **GET /anime/search** – Search anime by name or genre.
 - **GET /anime/recommendations** – Fetch personalized recommendations for the authenticated user.
-- **GET /user/preferences** – Manage user preferences (e.g., favorite genres).
+- **GET /auth/preferences** – Manage user preferences (e.g., favorite genres).
 
 ---
 
