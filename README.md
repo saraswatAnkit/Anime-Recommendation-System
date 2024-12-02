@@ -41,5 +41,5 @@ Welcome to the Anime Recommendation System! This project is designed to provide 
 ### 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/Anime-Recommendation-System.git
+git clone https://github.com/saraswatAnkit/Anime-Recommendation-System.git
 cd Anime-Recommendation-System
