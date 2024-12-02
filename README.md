@@ -52,7 +52,8 @@ python -m venv env
 env\Scripts\activate
 # macOS/Linux
 source env/bin/activate
-##3. Install the dependencies:
+
+###3. Install the dependencies:
 pip install -r requirements.txt
 ##4. Set up environment variables:
 Create a .env file in the root directory of your project with the following values:
