@@ -38,7 +38,7 @@ Welcome to the Anime Recommendation System! This project is designed to provide 
 
 ## Setup and Installation
 
-### 1. **Clone the repository:**
+# 1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/saraswatAnkit/Anime-Recommendation-System.git
@@ -46,16 +46,16 @@ cd Anime-Recommendation-System
 
 ```
 
-##2. Create and activate a virtual environment:
+#2. Create and activate a virtual environment:
 python -m venv env
 # Windows
 env\Scripts\activate
 # macOS/Linux
 source env/bin/activate
 
-###3. Install the dependencies:
+#3. Install the dependencies:
 pip install -r requirements.txt
-##4. Set up environment variables:
+#4. Set up environment variables:
 Create a .env file in the root directory of your project with the following values:
 
 DATABASE_URL=your_postgresql_database_url
@@ -63,9 +63,10 @@ SECRET_KEY=your_secret_key
 DEBUG=True
 Replace the values of DATABASE_URL and SECRET_KEY with your actual credentials.
 
-##5. Apply database migrations:
+#5. Apply database migrations:
 python manage.py migrate
-6. Run the server:
+
+#6. Run the server:
 python manage.py runserver
 The application should now be running on http://127.0.0.1:8000/.
 
