@@ -34,7 +34,6 @@ class ManagePreferencesView(APIView):
         watched_animes = request.data.get('watched_animes', [])
 
         user = request.user
-        # Get or create UserPreference for the current user
         user_preference, created = UserPreference.objects.get_or_create(user=user)
         user_preference.favorite_genres = favorite_genres
         user_preference.save()

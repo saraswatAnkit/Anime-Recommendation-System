@@ -37,7 +37,7 @@ class AnimeSearchView(APIView):
             response.raise_for_status()
             data = response.json()
 
-            # Print the entire response data for inspection
+            
             print("Response data:", data)
 
             if not data or 'data' not in data or 'Media' not in data['data']:
@@ -45,11 +45,10 @@ class AnimeSearchView(APIView):
 
             anime_list = data['data']['Media']
 
-            # Handle the case where Media is a single dictionary (not a list)
+            
             if isinstance(anime_list, dict):
-                anime_list = [anime_list]  # Wrap the single dictionary in a list
+                anime_list = [anime_list]  
 
-            # Now process the list as usual
             results = []
             for anime in anime_list:
                 title = anime['title']
@@ -75,20 +74,19 @@ class AnimeRecommendationView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # Extract query parameters from the request
+
         genre = request.GET.get('genre')
         user_id = request.GET.get('user_id')
 
-        # Log received parameters
+
         print(f"Received genre: {genre}, user_id: {user_id}")
 
-        # Validation: Ensure that the required parameters are present
         if not genre:
             return Response({'error': "The 'genre' parameter is required."}, status=400)
         if not user_id:
             return Response({'error': "The 'user_id' parameter is required."}, status=400)
 
-        # Fetch recommendations based on genre or user preferences
+        
         try:
             recommendations = self.get_recommendations(genre, user_id)
             return Response(recommendations)
@@ -104,14 +102,12 @@ class AnimeRecommendationView(APIView):
         print(f"Fetching recommendations for genre: {genre} and user_id: {user_id}")
 
         try:
-            # Fetch user preferences from the database
             user_preferences = UserPreference.objects.get(user_id=user_id)
 
-            # Log user preferences for debugging
+            
             print(f"User preferences for user_id {user_id}: {user_preferences}")
 
-            # Fetch anime recommendations based on genre
-            # Filter anime by genre, and also ensure it matches the user's favorite genres
+            
             if genre in user_preferences.favorite_genres:
                 recommendations = Anime.objects.filter(genre=genre)
             else:
@@ -123,7 +119,7 @@ class AnimeRecommendationView(APIView):
                 print(f"No anime found for genre: {genre}")
                 return {'message': f"No recommendations found for genre: {genre}"}
 
-            # Return recommendation data
+            
             return recommendations.values('name', 'genre', 'description', 'image_url')
 
         except UserPreference.DoesNotExist:
