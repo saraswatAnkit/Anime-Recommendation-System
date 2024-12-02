@@ -44,17 +44,3 @@ Welcome to the Anime Recommendation System! This project is designed to provide 
 git clone https://github.com/your-username/Anime-Recommendation-System.git
 cd Anime-Recommendation-System
 
-anime_recommendation_system/
-├── anime/
-│   ├── migrations/
-│   ├── models.py
-│   ├── views.py
-│   ├── serializers.py
-│   └── urls.py
-├── anime_recommendation_system/
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── .env
-├── manage.py
-└── requirements.txt
